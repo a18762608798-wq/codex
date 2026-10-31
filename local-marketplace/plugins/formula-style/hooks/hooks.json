@@ -1,0 +1,8 @@
+{
+  "description": "Inject formula rules at session start, each user prompt, and subagent start.",
+  "hooks": {
+    "SessionStart": [{ "hooks": [{ "type": "command", "command": "/usr/bin/python3 \"${PLUGIN_ROOT}/scripts/formula_style.py\"", "timeout": 5, "additionalContextLimit": 1000 }] }],
+    "UserPromptSubmit": [{ "hooks": [{ "type": "command", "command": "/usr/bin/python3 \"${PLUGIN_ROOT}/scripts/formula_style.py\"", "timeout": 5, "additionalContextLimit": 1000 }] }],
+    "SubagentStart": [{ "hooks": [{ "type": "command", "command": "/usr/bin/python3 \"${PLUGIN_ROOT}/scripts/formula_style.py\"", "timeout": 5, "additionalContextLimit": 1000 }] }]
+  }
+}

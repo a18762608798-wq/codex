@@ -1,0 +1,37 @@
+# Configuration allowlist: ignore credentials, sessions, databases, logs,
+# downloaded packages, plugin caches and any new runtime files by default.
+/*
+!/.gitignore
+!/AGENTS.md
+!/README.md
+!/config.toml
+!/local-marketplace/
+!/skills/
+!/rules/
+!/prompts/
+!/hooks/
+
+# Generated or downloaded skills, not user-maintained sources
+/skills/.system/
+/skills/ccgui-plugin-creator/
+
+# Never commit secrets or generated files inside source directories
+.env
+.env.*
+auth.json
+credentials.json
+*.pem
+*.key
+*.log
+*.sqlite*
+*.db
+*.db-*
+*.jsonl
+*.lock
+*.bak
+*.bak.*
+*.before-*
+.DS_Store
+node_modules/
+__pycache__/
+*.py[cod]

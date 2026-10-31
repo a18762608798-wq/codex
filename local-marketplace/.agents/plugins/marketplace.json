@@ -1,0 +1,12 @@
+{
+  "name": "dell-local",
+  "interface": { "displayName": "Dell local Codex plugins" },
+  "plugins": [
+    {
+      "name": "formula-style",
+      "source": { "source": "local", "path": "./plugins/formula-style" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

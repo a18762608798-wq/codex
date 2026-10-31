@@ -1,0 +1,7 @@
+{
+  "name": "formula-style",
+  "version": "1.0.2",
+  "description": "Formula-format guidance injected through native lifecycle hooks.",
+  "hooks": "./hooks/hooks.json",
+  "interface": { "displayName": "Formula style", "shortDescription": "LaTeX dollar-delimited formula rules" }
+}

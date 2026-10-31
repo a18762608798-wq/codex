@@ -1,0 +1,78 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+# One-time sync of portable Pi preferences; keep Codex's own model and login.
+model_reasoning_effort = "xhigh"
+# Fresh discovery for the shared paper/book hunter skills.
+web_search = "live"
+
+[tui]
+alternate_screen = "always"
+screen_reader_detection_done = true
+
+[tui.model_availability_nux]
+"gpt-6.1-sol" = 1
+
+[projects."/home/dell/.config/opencode"]
+trust_level = "trusted"
+
+# Converted from ~/.pi/agent/mcp.json; Pi-specific exposure/transport fields omitted.
+[mcp_servers.zotero]
+command = "/home/dell/.local/bin/zotero-mcp"
+args = ["serve"]
+enabled = true
+startup_timeout_sec = 120
+tool_timeout_sec = 600
+# Inherit credentials/proxies by name only; never store their values here.
+env_vars = ["ZOTERO_API_KEY", "ZOTERO_LIBRARY_ID", "ZOTERO_LIBRARY_TYPE", "HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy"]
+
+[mcp_servers.zotero.env]
+FASTMCP_CHECK_FOR_UPDATES = "off"
+NO_PROXY = "127.0.0.1,localhost"
+ZOTERO_MCP_TOOLSETS = "libraries,search-admin,pdf-geometry,discovery"
+ZOTERO_LOCAL = "true"
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
+enabled = true
+startup_timeout_sec = 60
+tool_timeout_sec = 60
+
+[mcp_servers.playwright]
+command = "/home/dell/.local/share/pi-node/current/bin/node"
+args = ["/home/dell/.local/share/pi-node/current/lib/node_modules/@playwright/mcp/cli.js", "--browser", "chromium", "--headless"]
+enabled = true
+startup_timeout_sec = 60
+tool_timeout_sec = 120
+
+[marketplaces.dell-local]
+source_type = "local"
+source = "/home/dell/.codex/local-marketplace"
+
+[plugins."formula-style@dell-local"]
+enabled = true
+
+[hooks.state]
+
+[hooks.state."formula-style@dell-local:hooks/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:dd7702d3f9a582adf9dece32a0bd76a1fe5a88b3d2b321d64043f47b61ec2759"
+trusted_content_hash = "sha256:7c3403471adedd20f349ae306c14f7c74312bf71b87c5d1bb32d5801e80d15ad"
+
+[hooks.state."formula-style@dell-local:hooks/hooks.json:user_prompt_submit:0:0"]
+trusted_hash = "sha256:6c64c72421f276ea31310ee8a86e61f40605e536d8584faaaafe47b5af3dfb78"
+trusted_content_hash = "sha256:7c3403471adedd20f349ae306c14f7c74312bf71b87c5d1bb32d5801e80d15ad"
+
+[hooks.state."formula-style@dell-local:hooks/hooks.json:subagent_start:0:0"]
+trusted_hash = "sha256:fb0dafc0b64a9b2c87df9f87b866168e009ece02fc98b5890c7d9f5761b76931"
+trusted_content_hash = "sha256:7c3403471adedd20f349ae306c14f7c74312bf71b87c5d1bb32d5801e80d15ad"
+
+[hooks.state."speckit-rework@dell-local:hooks/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:08ff7ab3b9ae866ee02e830ce4da92229cfd0e7f223aa460e058b3f1d073af69"
+trusted_content_hash = "sha256:d5da3de1a521deecfd5ff5c634e0381b284c960d946183c2c46d1977ff918e71"
+
+[hooks.state."speckit-rework@dell-local:hooks/hooks.json:session_start:0:0"]
+trusted_hash = "sha256:c63130e2811d46c860361a41156e292f3a9319c2c5c4dbc14c476b3b40374f87"
+trusted_content_hash = "sha256:d5da3de1a521deecfd5ff5c634e0381b284c960d946183c2c46d1977ff918e71"
+
+[hooks.state."speckit-rework@dell-local:hooks/hooks.json:user_prompt_submit:0:0"]
+trusted_hash = "sha256:534691eb5de01f3be322844bd24d15ce1f4d9cc192b57e820114453ed49c5fad"
+trusted_content_hash = "sha256:d5da3de1a521deecfd5ff5c634e0381b284c960d946183c2c46d1977ff918e71"

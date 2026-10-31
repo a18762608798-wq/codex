@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "formula-style",
+  "version": "1.0.1",
+  "description": "Inject the user's LaTeX formula-format rules through Codex lifecycle hooks."
+}
