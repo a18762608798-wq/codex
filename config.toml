@@ -5,6 +5,14 @@ model_reasoning_effort = "xhigh"
 # Fresh discovery for the shared paper/book hunter skills.
 web_search = "live"
 
+[model_providers.opencode-go]
+name = "OpenCode Go"
+base_url = "https://opencode.ai/inference/go/openai/v1"
+env_key = "OPENCODE_API_KEY"
+wire_api = "responses"
+requires_openai_auth = false
+supports_websockets = false
+
 [tui]
 alternate_screen = "always"
 screen_reader_detection_done = true
@@ -13,6 +21,12 @@ screen_reader_detection_done = true
 "gpt-6.1-sol" = 1
 
 [projects."/home/dell/.config/opencode"]
+trust_level = "trusted"
+
+[projects."/home/dell/sync"]
+trust_level = "trusted"
+
+[projects."/home/dell/.codex"]
 trust_level = "trusted"
 
 # Converted from ~/.pi/agent/mcp.json; Pi-specific exposure/transport fields omitted.
@@ -64,15 +78,3 @@ trusted_content_hash = "sha256:7c3403471adedd20f349ae306c14f7c74312bf71b87c5d1bb
 [hooks.state."formula-style@dell-local:hooks/hooks.json:subagent_start:0:0"]
 trusted_hash = "sha256:fb0dafc0b64a9b2c87df9f87b866168e009ece02fc98b5890c7d9f5761b76931"
 trusted_content_hash = "sha256:7c3403471adedd20f349ae306c14f7c74312bf71b87c5d1bb32d5801e80d15ad"
-
-[hooks.state."speckit-rework@dell-local:hooks/hooks.json:pre_tool_use:0:0"]
-trusted_hash = "sha256:08ff7ab3b9ae866ee02e830ce4da92229cfd0e7f223aa460e058b3f1d073af69"
-trusted_content_hash = "sha256:d5da3de1a521deecfd5ff5c634e0381b284c960d946183c2c46d1977ff918e71"
-
-[hooks.state."speckit-rework@dell-local:hooks/hooks.json:session_start:0:0"]
-trusted_hash = "sha256:c63130e2811d46c860361a41156e292f3a9319c2c5c4dbc14c476b3b40374f87"
-trusted_content_hash = "sha256:d5da3de1a521deecfd5ff5c634e0381b284c960d946183c2c46d1977ff918e71"
-
-[hooks.state."speckit-rework@dell-local:hooks/hooks.json:user_prompt_submit:0:0"]
-trusted_hash = "sha256:534691eb5de01f3be322844bd24d15ce1f4d9cc192b57e820114453ed49c5fad"
-trusted_content_hash = "sha256:d5da3de1a521deecfd5ff5c634e0381b284c960d946183c2c46d1977ff918e71"
