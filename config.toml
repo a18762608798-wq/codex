@@ -5,6 +5,10 @@ model_reasoning_effort = "xhigh"
 # Fresh discovery for the shared paper/book hunter skills.
 web_search = "live"
 
+# 全局关闭沙箱：单机可信项目专用，新线程生效
+sandbox_mode = "danger-full-access"
+approval_policy = "never"
+
 [model_providers.opencode-go]
 name = "OpenCode Go"
 base_url = "https://opencode.ai/inference/go/openai/v1"
@@ -18,7 +22,7 @@ alternate_screen = "always"
 screen_reader_detection_done = true
 
 [tui.model_availability_nux]
-"gpt-6.1-sol" = 1
+"gpt-6.1-sol" = 4
 
 [projects."/home/dell/.config/opencode"]
 trust_level = "trusted"
@@ -27,6 +31,12 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/home/dell/.codex"]
+trust_level = "trusted"
+
+[projects."/home/dell/.agents"]
+trust_level = "trusted"
+
+[projects."/home/dell/.t3"]
 trust_level = "trusted"
 
 # Converted from ~/.pi/agent/mcp.json; Pi-specific exposure/transport fields omitted.
