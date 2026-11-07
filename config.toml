@@ -39,34 +39,32 @@ trust_level = "trusted"
 [projects."/home/dell/.t3"]
 trust_level = "trusted"
 
-# Converted from ~/.pi/agent/mcp.json; Pi-specific exposure/transport fields omitted.
+[projects."/home/dell/development/gamma"]
+trust_level = "trusted"
+
 [mcp_servers.zotero]
 command = "/home/dell/.local/bin/zotero-mcp"
 args = ["serve"]
-enabled = true
-startup_timeout_sec = 120
-tool_timeout_sec = 600
-# Inherit credentials/proxies by name only; never store their values here.
 env_vars = ["ZOTERO_API_KEY", "ZOTERO_LIBRARY_ID", "ZOTERO_LIBRARY_TYPE", "HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy"]
+startup_timeout_sec = 120.0
+tool_timeout_sec = 600.0
 
 [mcp_servers.zotero.env]
 FASTMCP_CHECK_FOR_UPDATES = "off"
 NO_PROXY = "127.0.0.1,localhost"
-ZOTERO_MCP_TOOLSETS = "libraries,search-admin,pdf-geometry,discovery"
 ZOTERO_LOCAL = "true"
+ZOTERO_MCP_TOOLSETS = "libraries,search-admin,pdf-geometry,discovery"
 
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
-enabled = true
-startup_timeout_sec = 60
-tool_timeout_sec = 60
+startup_timeout_sec = 60.0
+tool_timeout_sec = 60.0
 
-[mcp_servers.playwright]
-command = "/home/dell/.local/share/pi-node/current/bin/node"
-args = ["/home/dell/.local/share/pi-node/current/lib/node_modules/@playwright/mcp/cli.js", "--browser", "chromium", "--headless"]
-enabled = true
-startup_timeout_sec = 60
-tool_timeout_sec = 120
+[mcp_servers.gamma]
+url = "http://127.0.0.1:9001/mcp"
+
+[mcp_servers.gamma_write]
+url = "http://127.0.0.1:9001/mcp-write"
 
 [marketplaces.dell-local]
 source_type = "local"
