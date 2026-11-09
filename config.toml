@@ -48,19 +48,6 @@ trust_level = "trusted"
 [projects."/srv/projects/shared/variational_qc"]
 trust_level = "trusted"
 
-[mcp_servers.zotero]
-command = "/home/dell/.local/bin/zotero-mcp"
-args = ["serve"]
-env_vars = ["ZOTERO_API_KEY", "ZOTERO_LIBRARY_ID", "ZOTERO_LIBRARY_TYPE", "HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY", "http_proxy", "https_proxy", "all_proxy"]
-startup_timeout_sec = 120.0
-tool_timeout_sec = 600.0
-
-[mcp_servers.zotero.env]
-FASTMCP_CHECK_FOR_UPDATES = "off"
-NO_PROXY = "127.0.0.1,localhost"
-ZOTERO_LOCAL = "true"
-ZOTERO_MCP_TOOLSETS = "libraries,search-admin,pdf-geometry,discovery"
-
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp"
 startup_timeout_sec = 60.0
