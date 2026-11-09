@@ -29,10 +29,3 @@
 
 * 删除文件或目录一律用 `mv` 移到回收站，不论是否由 Git 管理，临时文件也不例外；禁止直接使用 `rm` 或 `git rm`，并避免覆盖回收站中的同名内容。
 * 非删除用途的项目内移动、重命名仍优先用 `git mv`。
-
-## 长任务工具绕行（T3 harness 已知问题，未修复前有效）
-
-* 单次 `exec_command` 约 10 秒即返回并清理原进程组，前台长任务活不到结束；`sleep` 也会受影响，与 CPU 无关。
-* `exec_command` 超时后返回 `session_id`（如 `83987`）属正常 `Unified Exec` 行为，但 `write_stdin` 把整数传成浮点（如 `83987.0`），报 `expected i32`，会话不可续接。`yield_time_ms` 只是让出控制权，不是最大执行时间，不与 `timeout_ms` 混用。
-* 未修复前，超 10 秒任务一律用 `setsid nohup … &` 落盘后台跑，每轮只做小于 10 秒的 `tail/ps` 轮询；同时落盘退出码。示例：`setsid nohup python -u scripts/verify_exp06.py > /tmp/verify_fix.log 2>&1 < /dev/null &`，之后 `tail -n 20 /tmp/verify_fix.log` 轮询。
-* 上游修复整数续接后取消本绕行，不把 `setsid` 当通用最终方案。
