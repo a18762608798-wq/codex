@@ -42,6 +42,12 @@ trust_level = "trusted"
 [projects."/home/dell/development/gamma"]
 trust_level = "trusted"
 
+[projects."/srv/projects/users/dell"]
+trust_level = "trusted"
+
+[projects."/srv/projects/shared/variational_qc"]
+trust_level = "trusted"
+
 [mcp_servers.zotero]
 command = "/home/dell/.local/bin/zotero-mcp"
 args = ["serve"]

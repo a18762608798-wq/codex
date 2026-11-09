@@ -16,9 +16,10 @@
 
 ## 技能调用
 
-* 需要找论文、补参考文献、给任务配文献时，使用 `zotero-paper-hunter` skill（websearch 发现候选，arXiv/出版商页核实元数据，全经 Zotero MCP 去重入库到主题 `paper/inbox`）。
-* 需要找书、教材、讲义入库时，使用 `zotero-book-hunter` skill（先查 ISBN 再入库）。
-* 只在库内检索已有文献时，用 Zotero 语义搜索，不走 hunter。
+* 需要找论文、补参考文献、给任务配文献时，使用 `gamma-paper-hunter` skill（学术 API/网页检索发现候选，arXiv/出版商页核实元数据，经 Gamma MCP 去重入库到主题 `paper/inbox`）。
+* 需要找书、教材、讲义入库时，使用 `gamma-book-hunter` skill（先查 ISBN 再入库，经 Gamma MCP）。
+* 只在库内检索已有文献时，用 Gamma MCP 的 `search_library` / `list_pages`，不走 hunter。
+* 文献流程统一使用 Gamma；不调用已删除的 Zotero skills，也不回退到旧 Zotero 流程。
 
 ## MCP 工具调用
 
