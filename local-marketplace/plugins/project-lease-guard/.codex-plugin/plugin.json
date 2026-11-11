@@ -1,0 +1,10 @@
+{
+  "name": "project-lease-guard",
+  "version": "1.0.0",
+  "description": "Block writes to shared projects while another user holds the write lease.",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Project lease guard",
+    "shortDescription": "Deny shared-project writes when the lease belongs to someone else"
+  }
+}
