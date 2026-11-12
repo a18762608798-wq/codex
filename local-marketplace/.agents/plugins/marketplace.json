@@ -7,12 +7,6 @@
       "source": { "source": "local", "path": "./plugins/formula-style" },
       "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
       "category": "Productivity"
-    },
-    {
-      "name": "project-lease-guard",
-      "source": { "source": "local", "path": "./plugins/project-lease-guard" },
-      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
-      "category": "Productivity"
     }
   ]
 }

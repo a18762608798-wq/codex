@@ -69,8 +69,6 @@ source = "/home/dell/.codex/local-marketplace"
 [plugins."formula-style@dell-local"]
 enabled = true
 
-[plugins."project-lease-guard@dell-local"]
-enabled = true
 [hooks.state]
 
 [hooks.state."formula-style@dell-local:hooks/hooks.json:session_start:0:0"]
@@ -85,15 +83,3 @@ trusted_content_hash = "sha256:7c3403471adedd20f349ae306c14f7c74312bf71b87c5d1bb
 trusted_hash = "sha256:fb0dafc0b64a9b2c87df9f87b866168e009ece02fc98b5890c7d9f5761b76931"
 trusted_content_hash = "sha256:7c3403471adedd20f349ae306c14f7c74312bf71b87c5d1bb32d5801e80d15ad"
 
-[hooks.state."project-lease-guard@dell-local:hooks/hooks.json:pre_tool_use:0:0"]
-trusted_hash = "sha256:bdeedf4b21082a92b457b42fd12556b5598c2be32cf2c65b3e2d36f18e51dc72"
-trusted_content_hash = "sha256:d0abf3654172dbfa5b17f2eb14201f94e19ad55be278164986ec1ab426c3ffe3"
-
-# >>> project-lease-guard (managed) >>>
-[marketplaces.project-lease-guard-system]
-source_type = "local"
-source = "/usr/local/share/project-lease-guard/codex-marketplace"
-
-[plugins."project-lease-guard@project-lease-guard-system"]
-enabled = true
-# <<< project-lease-guard (managed) <<<
