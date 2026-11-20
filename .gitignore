@@ -30,6 +30,7 @@ credentials.json
 *.lock
 *.bak
 *.bak.*
+*.bak-*
 *.before-*
 .DS_Store
 node_modules/
